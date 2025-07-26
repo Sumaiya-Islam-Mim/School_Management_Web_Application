@@ -1,0 +1,1197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 98%;
+    width: 100%;
+    overflow-x: auto;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+/* Main navigation bar styles remain the same */
+.sidebar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(172, 10, 10, 0.918);
+    padding: 1rem;
+    color: #fff;
+    width: 100%;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+.sidebar h2 {
+    white-space: nowrap;
+    font-size: 30px;
+    color: #fff;
+    margin: 0;
+    padding-left: 0.5rem;
+    flex-grow: 1;
+    text-underline-offset:unset;
+}
+
+.sidebar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    position: relative;
+}
+
+.sidebar li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar li a:hover {
+    background-color: #3829be;
+    color: lightblue;
+    border-color: blue;
+}
+
+/* Dropdown menu styles */
+.sidebar .submenu {
+    display: none;
+    position: absolute;
+    background-color: rgba(172, 10, 10, 0.9);
+    top: 100%; /* Place below the main menu item */
+    left: 0;
+    min-width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.sidebar .submenu li {
+    margin: 0;
+}
+
+.sidebar .submenu li a {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-align: left;
+}
+
+.sidebar .submenu li a:hover {
+    background-color: #3829be;
+    color: lightblue;
+}
+
+/* Show submenu on hover */
+.sidebar li:hover .submenu {
+    display: block;
+}
+
+
+.content {
+    padding: 2rem;
+    margin-top: 1rem;
+    flex: 1;
+    width: 100%;
+}
+.section {
+    display: none;
+}
+.section.active {
+    display: block;
+}
+.section h3 {
+    margin-bottom: 1rem;
+}
+
+.attendance-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.attendance-table th, .attendance-table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.attendance-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.attendance-table td {
+    position: relative;
+}
+
+.attendance-checkbox {
+    width: 16px;
+    height: 16px;
+}
+button[type="submit"], button {
+    padding: 0.3rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    float: none;
+}
+button[type="submit"]:hover, button:hover {
+    background-color: #4768d6;
+}
+
+/* Fees and Payments */
+#feesPayments {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#feesPayments h3, #feesPayments h4 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#feesPayments label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+#feesPayments input, #feesPayments select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#feesPayments .button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#feesPayments .button:hover {
+    background-color: #4768d6;
+}
+.status-container {
+    margin-top: 20px;
+}
+
+.status-message {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+#reportsAnalytics {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.report-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.date-picker-container {
+    flex: 1;
+    margin: 10px;
+    min-width: 150px;
+}
+
+.date-picker-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+#apply-button {
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+#apply-button:hover {
+    background-color: #4768d6;
+}
+
+.report-results {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.report-results h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.report-table th, .report-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.report-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.report-summary {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+}
+
+.report-summary strong {
+    color: #333;
+}
+
+
+/* Create New Account*/
+#createAccountForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+}
+
+#createAccountForm label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#createAccountForm input, 
+#createAccountForm textarea, 
+#createAccountForm button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#createAccountForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#createAccountForm button:hover {
+    background-color: #4768d6;
+}
+
+#createAccountForm input[type="file"] {
+    padding: 5px;
+}
+
+#createAccountForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#createAccountForm select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#createAccountForm select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+#createAccountForm option {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Update Account */
+#updateAccountForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#updateAccountForm label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#updateAccountForm input,
+#updateAccountForm textarea,
+#updateAccountForm button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#updateAccountForm button[type="submit"] {
+    width: 100%;
+    margin: 0 auto; 
+    padding: 10px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none;
+    border-radius: 4px; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    display: block; 
+    text-align: center; 
+}
+
+#updateAccountForm button[type="submit"]:hover {
+    background-color: #4768d6; 
+}
+
+#updateAccountForm input[type="file"] {
+    padding: 5px;
+}
+
+#updateAccountForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#searchUserButton {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchUserButton:hover {
+    background-color: #0056b3;
+}
+
+
+/* Delete Section */
+#deleteAccount {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#deleteAccount h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#deleteAccount p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Delete User */
+#deleteAccount form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#deleteAccount label {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+#userIdInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#searchButton {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+}
+
+#userInfo {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#userInfo p {
+    margin: 0;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+#deleteAccount_deleteButton {
+    padding: 10px;
+    background-color: #f51010;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#deleteAccount_deleteButton:hover {
+    background-color: #b02a37;
+}
+
+
+
+/* Create Class Section */
+#createClassForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#createClassForm label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#createClassForm input,
+#createClassForm button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#createClassForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#createClassForm button:hover {
+    background-color: #4768d6;
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.error {
+    background-color: #ffeb3d;
+    color: #d32f2f;
+}
+.success {
+    background-color: #c8e6c9;
+    color: #256029;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: red;
+    font-size: 24px;
+    line-height: 1;
+    padding-left: 40px;
+    vertical-align: middle;
+}
+
+.close-btn:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+/* Delete Class Section */
+#deleteClassForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#deleteClassForm label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#deleteClassForm select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#deleteClassForm select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+#deleteClassForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#deleteClassForm button:hover {
+    background-color: #4768d6;
+}
+
+
+/* View Class Section */
+#viewClassForm {
+    margin: 20px auto;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#viewClassForm label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+#viewClassForm select,
+#viewClassForm button {
+    width: 55%;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#viewClassForm button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#viewClassForm button:hover {
+    background-color: #45a049;
+}
+
+#classSubjectsTable {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%; 
+    margin: 20px auto; 
+    border: 1px solid #ddd;
+}
+
+#classSubjectsTable h4 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+#classSubjectsTable th,
+#classSubjectsTable td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#classSubjectsTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+#classSubjectsBody tr:first-child {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+#viewClassMsg {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    width: 50%; 
+    margin: 10px auto;
+    text-align: center;
+}
+
+#viewClassMsg.error {
+    color: white;
+    background-color: #f44336;
+}
+
+#viewClassMsg.success {
+    color: white;
+    background-color: #4CAF50;
+}
+
+/* Create Subject Section */
+#createSubject {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#createSubject h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#createSubjectForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#createSubjectForm label {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+#createSubjectForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#createButton {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#createButton:hover {
+    background-color: #218838;
+}
+
+#formMessage {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#formMessage.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#formMessage.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Assign Subject Section */
+#assignSubject {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#assignSubject h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#assignSubjectForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#assignSubjectForm label {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+#classId,
+#subjectId {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#assignSubjectButton {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#assignSubjectButton:hover {
+    background-color: #0056b3;
+}
+
+#assignSubjformMsg {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#assignSubjformMsg.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#assignSubjformMsg.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Delete Subject Section*/
+#deleteSubject {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#deleteSubject h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#deleteSubjectForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#deleteSubjectForm label {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+#subjectDropdown {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#deleteSubjectButton {
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#deleteSubjectButton:hover {
+    background-color: #c82333;
+}
+
+#deleteSubjformMsg {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#deleteSubjformMsg.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#deleteSubjformMsg.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+#profile {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+}
+.profile-info {
+    text-align: left;
+    margin: 0 auto 30px;
+    max-width: 400px;
+}
+.profile-item {
+    font-size: 1rem;
+    color: #333;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+.change-password-section {
+    max-width: 400px;
+    margin: 20px auto 0;
+    text-align: left;
+}
+.change-password-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.change-password-section h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.change-password-section label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+.change-password-section input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.change-password-section button[type="submit"] {
+    padding: 15px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.change-password-section button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.horizontal-scroll {
+    width: 100%;               
+    overflow-x: auto;           
+    white-space: nowrap;       
+    border: 1px solid #ccc; 
+}
+
+#studentIdContainer {
+    display: flex;
+    gap: 10px;
+}
+#studentSearch input[type="text"],
+#studentSearch select,
+#studentSearch button[type="button"] {
+    width: 20%;
+    padding: 1px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#studentSearch label {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+#studentInfo .profile-item {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+#totalMarksContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;                      
+    max-width: 800px;                
+    margin: left;   
+    margin-bottom: 8px;       
+}
+
+#totalMarksContainer label {
+    grid-column: span 1; 
+    text-align: right;   
+    padding-right: 5px;     
+}
+
+#totalMarksContainer input,
+#totalMarksContainer textarea {
+    grid-column: span 1;     
+    width: 50%;                 
+    padding: 8px;             
+    font-size: 1.1em;           
+    box-sizing: border-box;      
+}
+
+#comment {
+    grid-column: span 2;        
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white; 
+    padding: 0.7rem 1.5rem; 
+    font-size: 1rem;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+    margin-top: 1rem; 
+}
+button[type="submit"]:hover {
+    background-color: #4768d6; 
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+#additionalDocuments {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#additionalDocuments h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#additionalDocuments .document-item {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+#additionalDocuments .document-item strong {
+    color: #000;
+    font-weight: bold;
+}
+
+#additionalDocuments .document-item span {
+    margin-left: 10px;
+    font-style: italic;
+    color: #666;
+}
