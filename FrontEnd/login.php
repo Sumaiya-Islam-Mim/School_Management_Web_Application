@@ -15,7 +15,7 @@ include('session.php');
     <div class="login-container">
         <div class="login-box">
             <div class="logo">
-                <img src="images/TESL_logo.png" alt="Logo">
+                <img src="images/XYZ_logo.png" alt="Logo">
             </div>
 
             <?php if (isset($_SESSION['error'])): ?>
