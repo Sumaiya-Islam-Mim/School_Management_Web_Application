@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'XYZ';
+$dbname = 'school';
 $username = 'root';
 $password = '';
 
@@ -11,4 +11,5 @@ try {
     echo "Database connection failed: " . $e->getMessage();
     exit();
 }
+
 ?>
