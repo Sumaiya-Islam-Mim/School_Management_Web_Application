@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'school.sql';
+$dbname = 'school';
 $username = 'root';
 $password = '';
 
@@ -13,4 +13,5 @@ try {
 }
 
 ?>
+
 
