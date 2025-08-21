@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - XYZ English Version School & College</title>
+    <style>
+        /* General reset and body styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white; /* Entire background is white */
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: red; /* Red navbar */
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .nav-container ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-container a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .nav-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Administration Section */
+        section#administration {
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: red; /* Red color for headings */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Card Styles for Admin Team */
+        .admin-card {
+            display: flex;
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .admin-info {
+            max-width: 800px;
+        }
+
+        .admin-info h2 {
+            font-size: 24px;
+            color: #d32f2f; /* Red color for names */
+            margin-bottom: 10px;
+        }
+
+        .admin-info p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: red; /* Red footer */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+        }
+
+        .footer-column p, .footer-column a {
+            font-size: 14px;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <img src="images/XYZ_logo.png" alt="XYZ Logo" class="logo">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="administration.html">Administration</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="administration">
+        <div class="content">
+            <h1>Meet Our Administration Team</h1>
+            <p>Our leadership team is committed to guiding our institution with vision and dedication. Here are our key members:</p>
+            
+            <!-- Chairman Section -->
+            <div class="admin-card">
+                <img src="images/Chairman.png" alt="Chairman" class="admin-img">
+                <div class="admin-info">
+                    <h2>Zahangir Alam</h2>
+                    <p><strong>Chairman</strong></p>
+                    <p>Welcome to XYZ! It is my privilege to lead this esteemed institution, where education is more than academics—it's a journey of personal growth, innovation, and empowerment. Our focus is on cultivating talent, inspiring young minds, and fostering a sense of responsibility in every student.</p>
+                </div>
+            </div>
+
+            <!-- Principal Section -->
+            <div class="admin-card">
+                <img src="images/user_icon.png" alt="Principal" class="admin-img">
+                <div class="admin-info">
+                    <h2>Mst. Shova</h2>
+                    <p><strong>Principal</strong></p>
+                    <p>At XYZ, we are dedicated to the holistic development of every student. As Principal, my mission is to provide an enriching learning environment that balances academic rigor with creativity and character building. Our team of passionate educators works to inspire curiosity, critical thinking, and resilience in our learners.</p>
+                </div>
+            </div>
+
+            <!-- Vice-Principal Section -->
+            <div class="admin-card">
+                <img src="images/Vice_Principal.png" alt="Vice Principal" class="admin-img">
+                <div class="admin-info">
+                    <h2>Hafizur Rahaman</h2>
+                    <p><strong>Vice Principal</strong></p>
+                    <p>At XYZ, we believe every student holds unique potential. As Vice Principal, I take pride in ensuring that our school fosters not only academic achievement but also personal growth, teamwork, and leadership. Our commitment to creating a safe, inclusive, and stimulating environment helps students explore their passions and develop essential life skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-column">
+            <p>&copy; 2024 <a href="https://www.facebook.com/XYZ.EnglishVersionSchoolandCollege/" target="_blank">XYZ English Version School & College</a></p>
+        </div>
+        <div class="footer-column">
+            <p>Address: Sector:6, Uttara, Dhaka</p>
+            <a href="https://maps.app.goo.gl/Qv1fpKDZMxZcr1SP8" target="_blank">View on Google Maps</a>
+        </div>
+        <div class="footer-column">
+            <p>Phone: +8801845-420672</p>
+            <p>Email: XYZschool23@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
